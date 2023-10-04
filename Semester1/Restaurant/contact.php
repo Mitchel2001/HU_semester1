@@ -15,6 +15,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (empty($_POST["bericht"])) {
         $errors[] = "Bericht is verplicht.";
     }
+    if (!empty($_POST["naam"]) && strlen($_POST["naam"]) > 50) {
+        $errors[] = "Naam mag maximaal 50 karakters bevatten.";
+    } if (!empty($_POST["email"]) && strlen($_POST["email"]) > 50) {
+        $errors[] = "E-mail mag maximaal 50 karakters bevatten.";
+    } if (!empty($_POST["bericht"]) && strlen($_POST["bericht"]) > 500) {
+        $errors[] = "Bericht mag maximaal 500 karakters bevatten.";
+    } if (!empty($_POST["naam"]) && strlen($_POST["naam"]) < 2) {
+        $errors[] = "Naam moet minimaal 2 karakters bevatten.";
+    } if (!empty($_POST["email"]) && strlen($_POST["email"]) < 2) {
+        $errors[] = "E-mail moet minimaal 2 karakters bevatten.";
+    } if (!empty($_POST["bericht"]) && strlen($_POST["bericht"]) < 2) {
+        $errors[] = "Bericht moet minimaal 2 karakters bevatten.";
+    }
 
    
     if (!empty($_POST["email"]) && strpos($_POST["email"], "@") === false) {

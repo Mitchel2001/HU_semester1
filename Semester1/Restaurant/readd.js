@@ -21,7 +21,8 @@ connection.connect((err) => {
       return;
     } else {
       console.log('Data ontvangen uit MySQL\n');
-      console.log(rows);
+      console.log(rows); 
+      
 
       // Selecteer het HTML-element waarin je de gegevens wilt invoegen
       const dataList = document.getElementById('data-list');
