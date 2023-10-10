@@ -1,4 +1,8 @@
 <?php include 'header.php';?>
+<script>
+  import Darkmode from 'darkmode-js';
+  new Darkmode().showWidget();
+</script>
 
 
 <!DOCTYPE html>
@@ -20,6 +24,7 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
   </head>
   <body>
 
@@ -144,7 +149,16 @@
           },
         });
       });
+
+      // Darkmode
       
+  function addDarkmodeWidget() {
+    new Darkmode().showWidget();
+  }
+  window.addEventListener('load', addDarkmodeWidget);
+
+  
+
     </script>
   </body>
 </html>
